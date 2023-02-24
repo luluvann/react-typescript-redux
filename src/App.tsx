@@ -23,6 +23,7 @@ function App() {
 
   function handleOptionChange(event: React.ChangeEvent<HTMLSelectElement>) {
     dispatch(displayMovies(parseInt(event.target.value)))
+    
   }
 
   function groupArrayByN(array: Movie[], n: number): Movie[][] {
@@ -46,14 +47,11 @@ function App() {
 
   return (
     <div className="App">
-      {numberOfPages}
-      {filteredMovies.length}
       {/* <DropdownComponent movies={movies} /> */}
       {groupedMovies.map((group, index) => (
         <MoviesListComponent index={index} movies={group} />
       ))}
-
-      <PaginatorComponent numberOfPages={numberOfPages} currentPage={currentPage} displayOptions={[4, 8, 20]} handleOptionChange={handleOptionChange} handlePageChange={handlePageChange} />
+      <PaginatorComponent numberOfPages={Math.ceil(filteredMovies.length / numberOfItemsPerPage)} currentPage={currentPage} displayOptions={[4, 8, 20]} handleOptionChange={handleOptionChange} handlePageChange={handlePageChange} />
     </div>
   );
 }

@@ -108,6 +108,7 @@ const moviesReducer = (state = initialState, action: MoviesActionTypes): MoviesS
           return {
             ...state,
             numberOfItemsPerPage: action.numberOfItems,
+            //set back to page 1
             currentPage: 1,
           };
         }

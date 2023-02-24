@@ -21,6 +21,7 @@ function PaginatorComponent(props: Props) {
 
     return (
         <nav>
+            {props.numberOfPages}
             <ul className="pagination">
                 <li className="page-item"><a className={`page-link ${isDisabled || isDisabledPrevious ? 'disabled' : ''}`} onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => { event.preventDefault(); props.handlePageChange(props.currentPage - 1) }} href="#">Précedent</a></li>
                 {pageElements}
