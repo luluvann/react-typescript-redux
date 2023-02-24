@@ -21,6 +21,7 @@ function App() {
 
   function handleOptionChange() {
     dispatch(displayMovies(4))
+    console.log("change")
   }
   
   const filteredMovies = movies.filter((movie) => movie.isShowing == true)
