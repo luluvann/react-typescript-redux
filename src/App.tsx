@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import './App.css';
 import MoviesListComponent from './components/movies/MoviesListComponent';
-import MultipleSelectComponent from './components/multipleSelect/MultipleSelectComponent';
+import MultipleSelectComponent from './design-system-components/multipleSelect/MultipleSelectComponent';
 import PaginatorComponent, { PaginatorProps } from './design-system-components/paginator/PaginatorComponent';
 import Movie from './interfaces/Movie';
 import { changePage, displayMovies, fetchMovies, filterMovies } from './store/moviesActions';
