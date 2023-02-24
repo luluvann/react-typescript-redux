@@ -13,7 +13,7 @@ function MoviesListComponent(props: Props) {
 
   const currentPage = useSelector((state: RootState) => state.movies.currentPage);
 
-  const display: boolean = currentPage === props.index
+  const display: boolean = currentPage === props.index + 1
 
   return (
     <>

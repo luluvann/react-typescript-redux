@@ -17,13 +17,12 @@ function App() {
   const currentPage = useSelector((state: RootState) => state.movies.currentPage);
   const numberOfItemsPerPage = useSelector((state: RootState) => state.movies.numberOfItemsPerPage);
 
-  function handlePageChange() {
-    dispatch(changePage(1))
+  function handlePageChange(pageClicked: number) {
+    dispatch(changePage(pageClicked))
   }
 
-  function handleOptionChange() {
-    dispatch(displayMovies(4))
-    console.log("change")
+  function handleOptionChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    dispatch(displayMovies(parseInt(event.target.value)))
   }
 
   function groupArrayByN(array: Movie[], n: number): Movie[][] {
@@ -39,7 +38,7 @@ function App() {
   }
 
   const filteredMovies = movies.filter((movie) => movie.isShowing == true)
-  const groupedMovies = groupArrayByN(movies, numberOfItemsPerPage)
+  const groupedMovies = groupArrayByN(filteredMovies, numberOfItemsPerPage)
 
   useEffect(() => {
     dispatch(fetchMovies());
@@ -47,9 +46,11 @@ function App() {
 
   return (
     <div className="App">
+      {numberOfPages}
+      {filteredMovies.length}
       {/* <DropdownComponent movies={movies} /> */}
       {groupedMovies.map((group, index) => (
-        <MoviesListComponent index={index + 1} movies={group} />
+        <MoviesListComponent index={index} movies={group} />
       ))}
 
       <PaginatorComponent numberOfPages={numberOfPages} currentPage={currentPage} displayOptions={[4, 8, 20]} handleOptionChange={handleOptionChange} handlePageChange={handlePageChange} />
