@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import './App.css';
 import MoviesListComponent from './components/movies/MoviesListComponent';
-import PaginatorComponent from './design-system-components/paginator/PaginatorComponent';
+import PaginatorComponent, { PaginatorProps } from './design-system-components/paginator/PaginatorComponent';
 import Movie from './interfaces/Movie';
 import { changePage, displayMovies, fetchMovies } from './store/moviesActions';
 import { MoviesState } from './store/moviesReducers';
@@ -13,7 +13,6 @@ import { RootState } from './store/store';
 function App() {
   const dispatch = useDispatch<ThunkDispatch<MoviesState, undefined, MoviesActionTypes>>();
   const movies = useSelector((state: RootState) => state.movies.data);
-  const numberOfPages = useSelector((state: RootState) => state.movies.numberOfPages);
   const currentPage = useSelector((state: RootState) => state.movies.currentPage);
   const numberOfItemsPerPage = useSelector((state: RootState) => state.movies.numberOfItemsPerPage);
 
@@ -23,7 +22,7 @@ function App() {
 
   function handleOptionChange(event: React.ChangeEvent<HTMLSelectElement>) {
     dispatch(displayMovies(parseInt(event.target.value)))
-    
+
   }
 
   function groupArrayByN(array: Movie[], n: number): Movie[][] {
@@ -34,12 +33,18 @@ function App() {
       groups.push(array.slice(i, i + n));
       i += n;
     }
-
     return groups;
   }
 
-  const filteredMovies = movies.filter((movie) => movie.isShowing == true)
-  const groupedMovies = groupArrayByN(filteredMovies, numberOfItemsPerPage)
+  let filteredMovies = movies.filter((movie) => movie.isShowing == true)
+  let groupedMovies = groupArrayByN(filteredMovies, numberOfItemsPerPage)
+
+  let paginatorProperties: PaginatorProps = {
+    totalNumberOfItems: filteredMovies.length,
+    numberOfItemsToDisplayPerPage: numberOfItemsPerPage,
+    currentPage: currentPage,
+    displayOptions: [4, 8, 20],
+  }
 
   useEffect(() => {
     dispatch(fetchMovies());
@@ -51,7 +56,7 @@ function App() {
       {groupedMovies.map((group, index) => (
         <MoviesListComponent index={index} movies={group} />
       ))}
-      <PaginatorComponent numberOfPages={Math.ceil(filteredMovies.length / numberOfItemsPerPage)} currentPage={currentPage} displayOptions={[4, 8, 20]} handleOptionChange={handleOptionChange} handlePageChange={handlePageChange} />
+      <PaginatorComponent properties={paginatorProperties} handleOptionChange={handleOptionChange} handlePageChange={handlePageChange} />
     </div>
   );
 }

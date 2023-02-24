@@ -4,6 +4,9 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 16px;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
 }
 
 .pagination {
@@ -58,6 +61,7 @@ nav {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 select {

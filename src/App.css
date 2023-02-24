@@ -15,4 +15,5 @@
   align-items: center;
   justify-content: center;
   font-family: var(--monospace);
+  position: relative;
 }
