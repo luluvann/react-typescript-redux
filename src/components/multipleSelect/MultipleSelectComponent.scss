@@ -1,0 +1,14 @@
+
+.select__container {
+    height: 90px;
+    padding: 16px;
+    
+    .select {
+        height: 100%;
+
+        option {
+            font-family: var(--monospace);
+        }
+    }
+    
+}
