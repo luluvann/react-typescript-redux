@@ -1,7 +1,7 @@
 import MovieComponent from '../movie/MovieComponent';
-import Movie from '../../interfaces/Movie';
 import './MoviesListComponent.scss'
 import { useSelector } from 'react-redux';
+import Movie from '../../interfaces/Movie';
 import { RootState } from '../../store/store';
 
 type Props = {
