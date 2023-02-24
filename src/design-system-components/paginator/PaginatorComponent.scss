@@ -21,6 +21,13 @@ nav {
     border-color: #dee2e6;
 }
 
+.page-item.selected {
+    .page-link {
+        background-color: cornsilk;
+    }
+
+}
+
 .page-item:first-child .page-link {
     margin-left: 0;
     border-top-left-radius: 0.25rem;
@@ -51,4 +58,9 @@ nav {
 
 a {
     text-decoration: none;
+}
+
+select {
+    height: 38px;
+    border-radius: 0.25rem;
 }
