@@ -12,4 +12,8 @@ button {
     &.delete {
         color: #EF3059;
     }
+
+    &.primary {
+        color: var(--color4)
+    }
 }
