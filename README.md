@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# Movies Catalog!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This website has been developed with React.js using Redux library and Typescript language.
+This webpage allows the user to see a movies catalog. One can interact with it by liking, disliking, deleting and filterting by movie categories.
 
-## Available Scripts
+## Deployed App on Heroku
+https://luluvann.github.io/react-typescript-redux/
 
-In the project directory, you can run:
+## User Story
+````
+AS a cinephile, I'd like to be able to see a catalog of movies and be able to interact with it
 
-### `npm start`
+````
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Acceptance Criteria
+```
+GIVEN a web platform
+WHEN I visit the application, I am presented with catalog of movies. I am able to see each movie in a card with the title as well as its category
+WHEN I click on the x button in a movie card, the movie will be permanently removed from the catalog (unless I refresh the page)
+WHEN I click on the thumbs up or thumbs down buttons, the respective count of likes or dislikes on a movie will increase
+WHEN I interact with the multi select dropdown on the top of the page, I am able to filter the movies catalog by movie category
+When I interact with the paginator on the page footer, I am able to select the number of movies I wish to display on a page (either 4, 8 or 20) and I'm able to navigate between the pages if there are many
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies
+Front-end libraries
+- React.js
+- Redux
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Save project to local
+1. Git clone the repo in the desired local folder SSH
+````
+git clone git@github.com:luluvann/react-typescript-redux.git
+````
+2. Cd to the root folder of the project and install all the dependencies (client and server side)
+````
+npm install
+````
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
+1. Cd to the root folder and start the project
+````
+npm run start
+````
+2. The client should automatically open at http://localhost:3000
