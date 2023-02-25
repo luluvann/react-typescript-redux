@@ -17,3 +17,9 @@
   font-family: var(--monospace);
   position: relative;
 }
+
+.movies__counter {
+  font-size: 15px;
+  color: var(--color1);
+  padding: 16px 0;
+}

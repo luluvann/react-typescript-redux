@@ -77,6 +77,8 @@ function App() {
 
   return (
     <div className="App">
+
+      <span className='movies__counter'>There are {movies.length} movies in the catalog!</span>
       <MultipleSelectComponent options={getCategoryOptions()} handleOptionChange={handleOptionChangeMultiselect} />
 
       {groupedMovies.map((group, index) => (

@@ -19,6 +19,4 @@ function MultipleSelectComponent(props: Props) {
 
 }
 
-
-
 export default MultipleSelectComponent;
