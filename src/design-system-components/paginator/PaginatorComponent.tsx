@@ -18,7 +18,7 @@ function PaginatorComponent(props: Props) {
 
     let isDisabled: boolean = (numberOfPages === 1)
     let isDisabledPrevious: boolean = (props.properties.currentPage === 1)
-    let isDisabledNext: boolean = (props.properties.currentPage == numberOfPages)
+    let isDisabledNext: boolean = (props.properties.currentPage === numberOfPages)
 
 
     const pageElements = [];
@@ -30,14 +30,14 @@ function PaginatorComponent(props: Props) {
         <nav>
             <ul className="pagination">
                 <li className="page-item">
-                    <a className={`page-link ${isDisabled || isDisabledPrevious ? 'disabled' : ''}`}
+                    <a href="/#" className={`page-link ${isDisabled || isDisabledPrevious ? 'disabled' : ''}`}
                         onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => { event.preventDefault(); props.handlePageChange(props.properties.currentPage - 1) }}>
                         Précedent
                     </a>
                 </li>
                 {pageElements}
                 <li className="page-item">
-                    <a className={`page-link ${isDisabled || isDisabledNext ? 'disabled' : ''}`}
+                    <a href="/#" className={`page-link ${isDisabled || isDisabledNext ? 'disabled' : ''}`}
                         onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => { event.preventDefault(); props.handlePageChange(props.properties.currentPage + 1) }}>
                         Suivant
                     </a>

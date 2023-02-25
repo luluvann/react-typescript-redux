@@ -2,7 +2,7 @@
 
 ## Description
 This website has been developed with React.js using Redux library and Typescript language.
-This webpage allows the user to see a movies catalog. One can interact with it by liking, disliking, deleting and filterting by movie categories.
+This webpage allows the user to see a movies catalog. One can interact with it by liking, disliking, deleting and filtering by movie categories.
 
 ## Deployed App on Github pages
 https://luluvann.github.io/react-typescript-redux/
@@ -34,7 +34,7 @@ Front-end libraries
 ````
 git clone git@github.com:luluvann/react-typescript-redux.git
 ````
-2. Cd to the root folder of the project and install all the dependencies (client and server side)
+2. Cd to the root folder of the project and install all the dependencies
 ````
 npm install
 ````

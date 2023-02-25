@@ -54,7 +54,7 @@ function App() {
     return groups;
   }
 
-  const filteredMovies = movies.filter((movie) => movie.isShowing == true)
+  const filteredMovies = movies.filter((movie) => movie.isShowing === true)
   const groupedMovies = groupArrayByN(filteredMovies, numberOfItemsPerPage)
 
   // Components properties objects builders
@@ -71,6 +71,7 @@ function App() {
       if (!categoryOptions.includes(movie.category)) {
         categoryOptions.push(movie.category);
       }
+      return categoryOptions
     })
     return categoryOptions
   }

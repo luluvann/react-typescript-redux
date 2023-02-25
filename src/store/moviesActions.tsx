@@ -51,7 +51,6 @@ export const deleteMovie = (movie: Movie) => {
 }
 
 export const filterMovies = (categories: string[]) => {
-  const movies: Movie[] = []
   return (dispatch: Dispatch<FilterMoviesAction>) => {
     dispatch({
       type: ActionTypes.FILTER_MOVIES,
